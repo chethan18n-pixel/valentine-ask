@@ -26,17 +26,21 @@ noBtn.addEventListener("mouseover", () => {
     const btnWidth = noBtn.offsetWidth;
     const btnHeight = noBtn.offsetHeight;
 
-    const padding = 20; // keeps button inside screen
+    const margin = 10; // space from window edges
 
-    const maxX = window.innerWidth - btnWidth - padding;
-    const maxY = window.innerHeight - btnHeight - padding;
+    const maxX = window.innerWidth - btnWidth - margin;
+    const maxY = window.innerHeight - btnHeight - margin;
 
-    const randomX = Math.random() * maxX + padding;
-    const randomY = Math.random() * maxY + padding;
+    // Safety check (for very small screens)
+    if (maxX <= 0 || maxY <= 0) return;
+
+    const randomX = Math.random() * maxX + margin;
+    const randomY = Math.random() * maxY + margin;
 
     noBtn.style.left = `${randomX}px`;
     noBtn.style.top = `${randomY}px`;
 });
+
 
 
 // Logic to make YES btn to grow

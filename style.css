@@ -125,10 +125,10 @@ p {
 
 .no-btn {
     position: fixed;
-    /* allows full screen movement */
+    transition: left 0.25s ease, top 0.25s ease;
     cursor: default;
-    transition: transform 0.2s ease;
 }
+
 
 
 .final-text {
